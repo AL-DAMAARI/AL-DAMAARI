@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharmacist — Kulmiye</title>
+  <link rel="icon" href="/brand/logo/kulmiye-logo-icon.svg" />
+  <link rel="stylesheet" href="/web/assets/css/base.css" />
+  <script type="module" src="/web/assets/js/components.js"></script>
+</head>
+<body>
+  <header id="site-header" class="header"></header>
+  <main class="section container">
+    <h1>Pharmacist Dashboard</h1>
+    <p class="muted">Manage stock, prescriptions, consultations, and health records.</p>
+
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="card">
+        <h3>Stock</h3>
+        <p class="small">Monitor key inventory KPIs.</p>
+        <div class="kpi">312</div>
+        <p class="small">items below threshold</p>
+        <div class="actions"><button class="btn btn-secondary">View stock</button></div>
+      </div>
+      <div class="card">
+        <h3>Prescriptions</h3>
+        <p class="small">Incoming e‑prescriptions and uploads.</p>
+        <table class="table">
+          <thead><tr><th>ID</th><th>Patient</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>RX‑2098</td><td>Ayaan A.</td><td>New</td></tr>
+            <tr><td>RX‑2095</td><td>Mohamed M.</td><td>Processing</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Consultations</h3>
+        <p class="small">Upcoming digital consultations.</p>
+        <ul>
+          <li>Today 14:00 — Ahmed A.</li>
+          <li>Today 15:30 — Hani I.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer" class="footer"></footer>
+</body>
+</html>

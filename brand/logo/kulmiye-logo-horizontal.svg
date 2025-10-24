@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kulmiye Polyclinic Pharmacy logo">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E88E5"/>
+      <stop offset="100%" stop-color="#0E9F6E"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <g transform="translate(8,8)">
+    <rect x="0" y="0" width="144" height="144" rx="32" fill="#FFFFFF" stroke="url(#g1)" stroke-width="2"/>
+    <path d="M72 24c9 0 16 7 16 16v10h10c9 0 16 7 16 16s-7 16-16 16H88v10c0 9-7 16-16 16s-16-7-16-16V82H46c-9 0-16-7-16-16s7-16 16-16h10V40c0-9 7-16 16-16z" fill="url(#g1)"/>
+    <path d="M113 60c14 3 24 14 19 28-5 14-24 23-38 19 8-8 13-17 16-27 2-6 3-12 3-20z" fill="#10B981" opacity="0.9"/>
+  </g>
+
+  <!-- Wordmark (use Inter/Poppins on client systems) -->
+  <g transform="translate(176,38)" fill="#0F172A">
+    <text x="0" y="32" font-family="Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-size="36" font-weight="700" letter-spacing="0">Kulmiye</text>
+    <text x="0" y="72" font-family="Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-size="28" font-weight="600" fill="#334155">Polyclinic Pharmacy</text>
+  </g>
+</svg>

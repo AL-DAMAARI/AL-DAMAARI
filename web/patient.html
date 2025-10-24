@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patient — Kulmiye</title>
+  <link rel="icon" href="/brand/logo/kulmiye-logo-icon.svg" />
+  <link rel="stylesheet" href="/web/assets/css/base.css" />
+  <script type="module" src="/web/assets/js/components.js"></script>
+  <script type="module" src="/web/assets/js/support.js"></script>
+</head>
+<body>
+  <header id="site-header" class="header"></header>
+  <main class="section container">
+    <h1>Patient Dashboard</h1>
+    <p class="muted">Upload prescriptions, track orders, book consultations, and set refill reminders.</p>
+
+    <div id="refill" class="grid grid-2" style="margin-top:24px">
+      <div class="card">
+        <h3>Upload Prescription</h3>
+        <div class="field">
+          <label>Prescription file (image/PDF)</label>
+          <input type="file" accept="image/*,application/pdf" />
+        </div>
+        <div class="actions"><button class="btn btn-primary">Upload</button></div>
+      </div>
+      <div class="card">
+        <h3>Order Tracking</h3>
+        <p class="small">Track your recent orders and delivery updates.</p>
+        <table class="table">
+          <thead><tr><th>Order</th><th>Status</th><th>Updated</th></tr></thead>
+          <tbody>
+            <tr><td>#1042</td><td>Preparing</td><td>Today</td></tr>
+            <tr><td>#1038</td><td>Delivered</td><td>Yesterday</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="consult" class="grid grid-2" style="margin-top:24px">
+      <div class="card">
+        <h3>Book Consultation</h3>
+        <div class="field"><label>Date</label><input type="date"/></div>
+        <div class="field"><label>Time</label><input type="time"/></div>
+        <div class="field"><label>Topic</label><input type="text" placeholder="Describe your concern"/></div>
+        <div class="actions"><button class="btn btn-primary">Book</button></div>
+      </div>
+      <div class="card">
+        <h3>Refill Reminders</h3>
+        <div class="chips">
+          <span class="chip">7 days</span>
+          <span class="chip active">14 days</span>
+          <span class="chip">30 days</span>
+        </div>
+        <div class="actions" style="margin-top:12px"><button class="btn btn-secondary">Set reminder</button></div>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer" class="footer"></footer>
+</body>
+</html>
