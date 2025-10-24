@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Pharmacy — Kulmiye</title>
+  <link rel="icon" href="/brand/logo/kulmiye-logo-icon.svg" />
+  <link rel="stylesheet" href="/web/assets/css/base.css" />
+  <script type="module" src="/web/assets/js/components.js"></script>
+  <script type="module" src="/web/assets/js/support.js"></script>
+  <script type="module" src="/web/assets/js/register-sw.js"></script>
+</head>
+<body>
+  <header id="site-header" class="header"></header>
+  <main class="section">
+    <div class="container">
+      <h1>Online Pharmacy</h1>
+      <p class="muted">Browse medicines, wellness products, and essentials. Filter by type, brand, and prescription status.</p>
+
+      <div class="card" style="margin-top:16px">
+        <div class="grid grid-3">
+          <div class="field">
+            <label for="q">Search</label>
+            <input id="q" type="text" placeholder="Search medicine, brand…" />
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="">All</option>
+              <option>Cold & Flu</option>
+              <option>Pain Relief</option>
+              <option>Diabetes</option>
+              <option>Heart & Blood Pressure</option>
+              <option>Vitamins & Supplements</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="rx">Prescription</label>
+            <select id="rx">
+              <option value="">Any</option>
+              <option value="otc">Non‑prescription (OTC)</option>
+              <option value="rx">Prescription</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="catalog-grid" class="grid grid-3" style="margin-top:24px"></div>
+
+      <div class="card" style="margin-top:24px">
+        <h3>Checkout (mock)</h3>
+        <p class="small">Secure checkout UI placeholder. Integrate your payment provider.</p>
+        <div class="grid grid-2">
+          <div>
+            <div class="field"><label>Name</label><input type="text" placeholder="Full name"/></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"/></div>
+            <div class="field"><label>Address</label><input type="text" placeholder="Delivery address"/></div>
+          </div>
+          <div>
+            <div class="field"><label>Card Number</label><input type="text" placeholder="0000 0000 0000 0000"/></div>
+            <div class="field"><label>Expiry</label><input type="text" placeholder="MM/YY"/></div>
+            <div class="field"><label>CVC</label><input type="text" placeholder="CVC"/></div>
+          </div>
+        </div>
+        <div class="actions"><button class="btn btn-primary">Pay securely</button></div>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer" class="footer"></footer>
+
+  <script type="module">
+    const products = [
+      { id: 1, name: 'Paracetamol 500mg', brand: 'Generic', price: 3.5, category: 'Pain Relief', rx: 'otc' },
+      { id: 2, name: 'Ibuprofen 200mg', brand: 'Generic', price: 4.0, category: 'Pain Relief', rx: 'otc' },
+      { id: 3, name: 'Metformin 500mg', brand: 'PharmaCo', price: 12, category: 'Diabetes', rx: 'rx' },
+      { id: 4, name: 'Losartan 50mg', brand: 'CardioMed', price: 15, category: 'Heart & Blood Pressure', rx: 'rx' },
+      { id: 5, name: 'Vitamin C 1000mg', brand: 'NutraLife', price: 9, category: 'Vitamins & Supplements', rx: 'otc' },
+      { id: 6, name: 'Cough Syrup', brand: 'SootheCo', price: 6, category: 'Cold & Flu', rx: 'otc' }
+    ];
+
+    const grid = document.getElementById('catalog-grid');
+    const q = document.getElementById('q');
+    const category = document.getElementById('category');
+    const rx = document.getElementById('rx');
+
+    function render(list) {
+      grid.innerHTML = list.map(p => `
+        <div class="card">
+          <h3>${p.name}</h3>
+          <p class="small">${p.brand} · ${p.category} ${p.rx === 'rx' ? '· Rx' : ''}</p>
+          <div class="actions"><button class="btn btn-secondary">Add to cart — $${p.price.toFixed(2)}</button></div>
+        </div>
+      `).join('');
+    }
+
+    function applyFilters() {
+      const term = q.value.toLowerCase();
+      const cat = category.value;
+      const req = rx.value;
+      const list = products.filter(p => {
+        const matchesTerm = !term || p.name.toLowerCase().includes(term) || p.brand.toLowerCase().includes(term);
+        const matchesCat = !cat || p.category === cat;
+        const matchesRx = !req || p.rx === req;
+        return matchesTerm && matchesCat && matchesRx;
+      });
+      render(list);
+    }
+
+    q.addEventListener('input', applyFilters);
+    category.addEventListener('change', applyFilters);
+    rx.addEventListener('change', applyFilters);
+    render(products);
+  </script>
+</body>
+</html>

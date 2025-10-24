@@ -1,0 +1,12 @@
+{
+  "name": "Kulmiye Polyclinic Pharmacy",
+  "short_name": "Kulmiye",
+  "description": "Trusted Somali community pharmacy: medicines, consultations, refills, and support.",
+  "start_url": "/web/index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E88E5",
+  "icons": [
+    { "src": "/brand/logo/kulmiye-logo-icon.svg", "sizes": "256x256", "type": "image/svg+xml" }
+  ]
+}
